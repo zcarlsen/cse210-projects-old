@@ -43,11 +43,11 @@ class Program
 
         remainder = grade % 10;
 
-        if (remainder >= 0.7 && gradeLetter != "A" && gradeLetter != "F")
+        if (remainder >= 7 && gradeLetter != "A" && gradeLetter != "F")
         {
             sign = "+";
         }
-        else if (remainder < 0.3 && gradeLetter != "F")
+        else if (remainder < 3 && gradeLetter != "F")
         {
             sign ="-";
         }
