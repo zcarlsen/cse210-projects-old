@@ -6,15 +6,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        string magic;
+        Random randomNum = new Random();
+        int magic_num = randomNum.Next(1,100);
         string guess;
-        int magic_num;
         int guess_num = 0;
         int count = 0;
-
-        Console.Write("What is the magic number? ");
-        magic = Console.ReadLine();
-        magic_num = int.Parse(magic);
 
         while (guess_num != magic_num)
         {
