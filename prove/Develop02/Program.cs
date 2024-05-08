@@ -35,20 +35,18 @@ class Program
                 newEntry._promptText = generator.GetRandomPrompt();
                 newEntry._entryText = Console.ReadLine();
 
-                Console.WriteLine(newEntry._promptText);
                 journal.AddEntry(newEntry);
             }
 
             else if (selection == 2)
             {
-                
+                journal.DisplayAll();
             }
 
             else if (selection == 3)
             {
                 Console.Write("What is the filename? ");
                 string filename = Console.ReadLine();
-                Journal journal = new Journal();
                 journal.LoadFromFile(filename);
             }
 
@@ -56,7 +54,6 @@ class Program
             {
                 Console.Write("What is the filename? ");
                 string filename = Console.ReadLine();
-                Journal journal = new Journal();
                 journal.SaveToFile(filename);
             }
 

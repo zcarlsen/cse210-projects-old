@@ -13,7 +13,7 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
-            Console.WriteLine(entry);
+            entry.Display();
         }
     }
 
@@ -21,7 +21,10 @@ public class Journal
     {
         using (StreamWriter outputFile = new StreamWriter(file))
         {
-            outputFile.WriteLine(_entries);
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine($"{entry._date}|{entry._entryText}|{entry._promptText}");
+            }
         }
     }
 
@@ -31,9 +34,14 @@ public class Journal
 
         foreach (string entry in entries)
         {
+            Entry newEntry = new Entry();
             string[] parts = entry.Split("|");
 
-            
+            newEntry._date = parts[0];
+            newEntry._entryText = parts[1];
+            newEntry._promptText = parts[2];
+
+            _entries.Add(newEntry);
         }
     }
 }
